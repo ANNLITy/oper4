@@ -3,9 +3,6 @@ public class Author {
     private String surName;
 
     public Author(String name, String surName) {
-        if (name != this.name) {
-            throw new IllegalArgumentException("Неверное имя");
-        }
         this.name = name;
         this.surName = surName;
 
@@ -22,8 +19,16 @@ public class Author {
     public String toString() {
         return this.name + " " + this.surName;
     }
-
-    {
-
+    @Override
+    public boolean equals(Object other) {
+        if (getClass() != other.getClass()) {
+            return false;
+        }
+        Author a2 = (Author) other;
+        return name.equals(a2.name);
+    }
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(name);
     }
 }

@@ -26,5 +26,19 @@ public class Book {
     public String toString() {
         return  this.title +this.date+ this.author;
     }
+    @Override
+    public boolean equals(Object other) {
+        if (getClass() != other.getClass()) {
+            return false;
+        }
+        Book b2 = (Book) other;
+        return title.equals(b2.title);
+    }
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(title);
+    }
+
+
 
 }
