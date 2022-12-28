@@ -24,6 +24,9 @@ public class Author {
         if (getClass() != other.getClass()) {
             return false;
         }
+        if (other.getClass()!= null) {
+            return false;
+        }
         Author a2 = (Author) other;
         return name.equals(a2.name);
     }

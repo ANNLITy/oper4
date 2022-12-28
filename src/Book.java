@@ -31,6 +31,9 @@ public class Book {
         if (getClass() != other.getClass()) {
             return false;
         }
+        if (other.getClass()!= null){
+            return false;
+        }
         Book b2 = (Book) other;
         return title.equals(b2.title);
     }
