@@ -19,17 +19,15 @@ public class Author {
     public String toString() {
         return this.name + " " + this.surName;
     }
+
     @Override
-    public boolean equals(Object other) {
-        if (getClass() != other.getClass()) {
-            return false;
-        }
-        if (other.getClass()!= null) {
-            return false;
-        }
-        Author a2 = (Author) other;
-        return name.equals(a2.name);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return name.equals(author.name);
     }
+
     @Override
     public int hashCode() {
         return java.util.Objects.hash(name);

@@ -27,16 +27,13 @@ public class Book {
         return  this.title +this.date+ this.author;
     }
     @Override
-    public boolean equals(Object other) {
-        if (getClass() != other.getClass()) {
-            return false;
-        }
-        if (other.getClass()!= null){
-            return false;
-        }
-        Book b2 = (Book) other;
-        return title.equals(b2.title);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return date == book.date;
     }
+
     @Override
     public int hashCode() {
         return java.util.Objects.hash(title);
